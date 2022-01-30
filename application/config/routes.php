@@ -59,3 +59,10 @@ $route['api/employee/save'] = 'api/ApiEmployeeController/saveEmployee';
 $route['api/employee/find/(:any)'] = 'api/ApiEmployeeController/findEmployee/$1';
 $route['api/employee/update/(:any)'] = 'api/ApiEmployeeController/updateEmployee/$1';
 $route['api/employee/delete/(:any)'] = 'api/ApiEmployeeController/deleteEmployee/$1';
+$route['api/upload'] = 'api/ApiEmployeeController/uploadImage';
+
+
+$route['api/category'] = 'api/ProductController/index';
+$route['api/category_pagenation'] = 'api/ProductController/categoryPagenation';
+$route['api/get_product'] = 'api/ProductController/getProduct';
+

@@ -5,19 +5,41 @@ require  APPPATH . 'libraries/Format.php';
 use chriskacerguis\RestServer\RestController;
 
 
-class ApiEmployeeController extends RestController{
+class ProductController extends RestController{
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('EmployeeModel');
+		$this->load->model('ProductModel');
 	}
 
 	public function index_get(){
 		//echo("I am RestFul API");
 		//$this->load->get_employee();
-		$employee= new EmployeeModel();
-		$result_emp= $employee->get_employee();
+		$product= new ProductModel();
+		$result_emp= $product->get_category();
+		$this->response($result_emp,200);
+	}
+
+	
+	public function categoryPagenation_post(){
+		$limit=$this->input->post('limit');
+		$start=$this->input->post('start');
+		//echo("I am RestFul API");
+		//$this->load->get_employee();
+		$product= new ProductModel();
+		$result_emp= $product->get_category_pagenation($limit,$start);
+		$this->response($result_emp,200);
+	}
+
+	public function getProduct_post(){
+		$limit=$this->input->post('limit');
+		$start=$this->input->post('start');
+		$category=$this->input->post('category');
+		//echo("I am RestFul API");
+		//$this->load->get_employee();
+		$product= new ProductModel();
+		$result_emp= $product->get_product_pagenation($limit,$start,$category);
 		$this->response($result_emp,200);
 	}
 
