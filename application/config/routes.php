@@ -66,3 +66,7 @@ $route['api/category'] = 'api/ProductController/index';
 $route['api/category_pagenation'] = 'api/ProductController/categoryPagenation';
 $route['api/get_product'] = 'api/ProductController/getProduct';
 
+
+$route['api/user/login'] = 'api/UserController/loginUser';
+$route['api/user/register'] = 'api/UserController/registerUser';
+
